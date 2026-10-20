@@ -33,3 +33,19 @@ git clone https://github.com/RAYHAN-HEXA/Advanced-Express.git
 cd Advanced-Express
 npm install
 ```
+
+### Environment Variables
+
+Copy the example file and fill in your own values:
+
+```bash
+cp .env.example .env
+```
+
+| Variable             | Description                          |
+| -------------------- | ------------------------------------ |
+| `CONNECTIONSTRING`   | PostgreSQL connection string         |
+| `PORT`               | Port the server listens on           |
+| `JWT_SECRET`         | Secret used to sign JWT tokens       |
+
+> **Note:** `.env` is gitignored — never commit real credentials.
