@@ -18,3 +18,18 @@ A RESTful API built with Express 5, TypeScript, and PostgreSQL. It provides user
 - [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) — JWT auth
 - [bcrypt](https://github.com/kelektiv/node.bcrypt.js) — password hashing
 - [tsx](https://github.com/privatenumber/tsx) — dev server with hot reload
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or later)
+- A PostgreSQL database (local or hosted, e.g. [Neon](https://neon.tech))
+
+### Installation
+
+```bash
+git clone https://github.com/RAYHAN-HEXA/Advanced-Express.git
+cd Advanced-Express
+npm install
+```
