@@ -83,3 +83,7 @@ SRC/
 ├── app.ts           # Express app setup
 └── Server.ts        # Server entry point
 ```
+
+## License
+
+[ISC](https://opensource.org/licenses/ISC)
