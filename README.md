@@ -68,3 +68,18 @@ npm run dev
 | DELETE | `/api/users/:id`   | Delete a user            |
 | POST   | `/api/profile`     | Create a profile         |
 | POST   | `/api/auth/login`  | Log in and get a JWT     |
+
+## Project Structure
+
+```
+SRC/
+├── Config/          # Environment config
+├── db/              # PostgreSQL connection pool
+├── modules/
+│   ├── auth/        # Login / JWT auth
+│   ├── profile/     # User profiles
+│   ├── user.*       # User CRUD
+│   └── ...
+├── app.ts           # Express app setup
+└── Server.ts        # Server entry point
+```
