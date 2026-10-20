@@ -49,3 +49,10 @@ cp .env.example .env
 | `JWT_SECRET`         | Secret used to sign JWT tokens       |
 
 > **Note:** `.env` is gitignored — never commit real credentials.
+
+### Scripts
+
+```bash
+# Start the dev server with hot reload
+npm run dev
+```
