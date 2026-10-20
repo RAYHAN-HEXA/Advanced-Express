@@ -56,3 +56,15 @@ cp .env.example .env
 # Start the dev server with hot reload
 npm run dev
 ```
+
+## API Endpoints
+
+| Method | Endpoint           | Description              |
+| ------ | ------------------ | ------------------------ |
+| POST   | `/api/users`       | Create a user            |
+| GET    | `/api/users`       | List all users           |
+| GET    | `/api/users/:id`   | Get a single user        |
+| PUT    | `/api/users/:id`   | Update a user            |
+| DELETE | `/api/users/:id`   | Delete a user            |
+| POST   | `/api/profile`     | Create a profile         |
+| POST   | `/api/auth/login`  | Log in and get a JWT     |
