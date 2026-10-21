@@ -25,6 +25,7 @@ try {
 }
 }
 const getAllusers =  async(req :Request, res:Response) => {
+  console.log(req.user)
  
 try {
       const result = await userServices.getAllusersFromDB();
