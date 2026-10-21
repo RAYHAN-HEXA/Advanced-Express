@@ -20,6 +20,12 @@ const auth = (...roles : ROLES[]) => {
         });
       }
 
+      // 2. Verify token
+      const decoded = Jwt.verify(
+        token,
+        config.jwt_secret as string
+      ) as JwtPayload;
+
       next();
     } catch (error) {
       return res.status(401).json({
