@@ -26,6 +26,19 @@ const auth = (...roles : ROLES[]) => {
         config.jwt_secret as string
       ) as JwtPayload;
 
+      // 3. Find user into database
+      const userData = await pool.query(
+        "SELECT * FROM users WHERE email = $1",
+        [decoded.email]
+      );
+
+      // 4. Check user existence
+      if (userData.rows.length === 0) {
+        return res.status(401).json({
+          message: "Unauthorized access!",
+        });
+      }
+
       next();
     } catch (error) {
       return res.status(401).json({
