@@ -50,3 +50,17 @@ return {refreshToken,accessToken};
 export const authService = {
 loginUserIntoDB
 }
+const generateFreshToken = async(token : string)=>{
+
+      // 1. Check token
+      if (!token) {
+          throw new Error('unauthorized')
+      }
+
+      // 2. Verify token
+      const decoded = jwt.verify(
+        token,
+        config.refresh_secret as string
+      ) as JwtPayload;
+
+}
