@@ -45,11 +45,6 @@ const accessToken = jwt.sign(jwtPayload,config.jwt_secret as string,{expiresIn:"
 const refreshToken = jwt.sign(jwtPayload,config.refresh_secret as string,{expiresIn:"1d"})
 return {refreshToken,accessToken};
 }
-
-
-export const authService = {
-loginUserIntoDB
-}
 const generateFreshToken = async(token : string)=>{
 
       // 1. Check token
@@ -81,5 +76,18 @@ const generateFreshToken = async(token : string)=>{
       if(!user.is_active){
      throw new Error('forbidden')
 }
+    const jwtPayload = {
+  id: user.id,
+      name: user.name,
+      role: user.role,
+      is_active: user.is_active,
+      email: user.email,
+    };
+const accessToken = jwt.sign(jwtPayload,config.jwt_secret as string,{expiresIn:"1d"})
+    return { accessToken };
 
+}
+
+export const authService = {
+loginUserIntoDB,generateFreshToken
 }
