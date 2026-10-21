@@ -1,6 +1,6 @@
 import { pool } from "../../db";
 import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
+import jwt, { type JwtPayload } from "jsonwebtoken";
 import config from "../../Config";
 
 
@@ -42,7 +42,8 @@ const jwtPayload = {
 
 }
 const accessToken = jwt.sign(jwtPayload,config.jwt_secret as string,{expiresIn:"1d"})
-return {accessToken};
+const refreshToken = jwt.sign(jwtPayload,config.refresh_secret as string,{expiresIn:"1d"})
+return {refreshToken,accessToken};
 }
 
 
