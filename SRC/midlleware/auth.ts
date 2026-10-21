@@ -39,6 +39,14 @@ const auth = (...roles : ROLES[]) => {
         });
       }
 
+      // 5. Get user
+      const user = userData.rows[0];
+      if(!user.is_active){
+        return res.status(403).json({
+          message: "Forbidden access!",
+        });
+      }
+
       next();
     } catch (error) {
       return res.status(401).json({
