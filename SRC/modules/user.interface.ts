@@ -5,5 +5,6 @@ export interface Iuser {
     email: string;
     password : number ;
     is_active? : boolean;
+    role?: string;
 
 }
