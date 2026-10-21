@@ -46,6 +46,13 @@ const auth = (...roles : ROLES[]) => {
           message: "Forbidden access!",
         });
       }
+      //roles  = ["admin",'agent'];
+      //user.role = "admin"|"agent"|"user"
+      if(roles.length && !roles.includes(user.role)){
+        return res.status(403).json({
+          message: "Forbidden access!",
+        });
+      }
 
       next();
     } catch (error) {
