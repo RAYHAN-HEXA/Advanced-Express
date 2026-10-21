@@ -11,12 +11,17 @@ const port =  config.port;
 app.use(express.json());
 app.use(express.text());
 app.use(express.urlencoded({extended:true}))
+import cookieParse from "cookie-parser";
+import cookieParser from "cookie-parser";
+import cors from "cors"
 
 app.use(logger);
 
+app.use
+ app.use(cookieParser());
  app.use("/api/users",userRouter)
  app.use("/api/profile",profileRouter)
  app.use("/api/auth",authroute)
-
+app.use(cors())
 
 export default app
