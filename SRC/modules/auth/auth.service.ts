@@ -63,4 +63,23 @@ const generateFreshToken = async(token : string)=>{
         config.refresh_secret as string
       ) as JwtPayload;
 
+      // 3. Find user from database
+      const userData = await pool.query(
+        "SELECT * FROM users WHERE email = $1",
+        [decoded.email]
+      );
+
+      // 4. Check user existence
+      if (userData.rows.length === 0) {
+          throw new Error('forbidden')
+      }
+
+      // 5. Get user
+      const user = userData.rows[0];
+
+      console.log(user);
+      if(!user.is_active){
+     throw new Error('forbidden')
+}
+
 }
