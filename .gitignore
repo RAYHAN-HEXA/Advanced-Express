@@ -17,3 +17,6 @@ npm-debug.log*
 # Editor/system artifacts
 .claude/
 8000;
+
+# Request log written by logger middleware
+logger text
